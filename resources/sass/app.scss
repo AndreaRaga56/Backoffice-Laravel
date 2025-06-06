@@ -1,0 +1,22 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+nav {
+    background-color: #335c67;
+}
+
+:root {
+    --bs-primary: #335c67;
+    --bs-secondary: #fff3b0;
+    --bs-accent: #e09f3e;
+    --bs-danger: #9e2a2b;
+    --bs-dark: #540b0e;
+    --bs-emphasis-color-rgb: 255, 243, 176;
+
+}
