@@ -12,7 +12,7 @@ nav {
 }
 
 :root {
-    --bs-primary: #335c67;
+    --bs-primary: #0B4753;
     --bs-secondary: #fff3b0;
     --bs-accent: #e09f3e;
     --bs-danger: #9e2a2b;
@@ -36,6 +36,7 @@ nav {
     --bs-btn-disabled-bg: #335c67;
     --bs-btn-disabled-border-color: #335c67;
 }
+
 .btn-secondary {
     --bs-btn-color: #335c67;
     --bs-btn-bg: #fff3b0;
@@ -52,6 +53,7 @@ nav {
     --bs-btn-disabled-bg: #fff3b0;
     --bs-btn-disabled-border-color: #fff3b0;
 }
+
 .btn-success {
     --bs-btn-color: #fff;
     --bs-btn-bg: #e09f3e;
@@ -68,6 +70,7 @@ nav {
     --bs-btn-disabled-bg: #e09f3e;
     --bs-btn-disabled-border-color: #e09f3e;
 }
+
 .btn-info {
     --bs-btn-color: #fff;
     --bs-btn-bg: #9e2a2b;
@@ -84,6 +87,7 @@ nav {
     --bs-btn-disabled-bg: #9e2a2b;
     --bs-btn-disabled-border-color: #9e2a2b;
 }
+
 .btn-warning {
     --bs-btn-color: #fff;
     --bs-btn-bg: #e09f3e;
@@ -100,6 +104,7 @@ nav {
     --bs-btn-disabled-bg: #e09f3e;
     --bs-btn-disabled-border-color: #e09f3e;
 }
+
 .btn-danger {
     --bs-btn-color: #fff;
     --bs-btn-bg: #540b0e;
@@ -115,4 +120,13 @@ nav {
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #540b0e;
     --bs-btn-disabled-border-color: #540b0e;
+}
+
+.logo {
+    height: 10vh;
+}
+
+nav {
+    height: 10vh;
+    background-color: var(--bs-primary);
 }
