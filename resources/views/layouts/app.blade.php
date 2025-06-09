@@ -27,7 +27,6 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <img src="{{ asset('/logo.jpeg') }}" alt="CineWorld Logo" class="logo">
-
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

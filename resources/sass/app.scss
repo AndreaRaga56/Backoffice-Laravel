@@ -7,8 +7,16 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-nav {
-    background-color: #335c67;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: var(--bs-accent);
+    min-height: 90vh;
+    padding: 2rem 0rem;
 }
 
 :root {
@@ -22,34 +30,34 @@ nav {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #335c67;
-    --bs-btn-border-color: #335c67;
+    --bs-btn-bg: #0B4753;
+    --bs-btn-border-color: #0B4753;
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #27434b;
-    --bs-btn-hover-border-color: #27434b;
-    --bs-btn-focus-shadow-rgb: 51, 92, 103;
+    --bs-btn-hover-bg: #08333b;
+    --bs-btn-hover-border-color: #08333b;
+    --bs-btn-focus-shadow-rgb: 11, 71, 83;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #223a41;
-    --bs-btn-active-border-color: #223a41;
+    --bs-btn-active-bg: #06242a;
+    --bs-btn-active-border-color: #06242a;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #335c67;
-    --bs-btn-disabled-border-color: #335c67;
+    --bs-btn-disabled-bg: #0B4753;
+    --bs-btn-disabled-border-color: #0B4753;
 }
 
 .btn-secondary {
-    --bs-btn-color: #335c67;
+    --bs-btn-color: #0B4753;
     --bs-btn-bg: #fff3b0;
     --bs-btn-border-color: #fff3b0;
-    --bs-btn-hover-color: #335c67;
+    --bs-btn-hover-color: #0B4753;
     --bs-btn-hover-bg: #e6db9e;
     --bs-btn-hover-border-color: #e6db9e;
     --bs-btn-focus-shadow-rgb: 255, 243, 176;
-    --bs-btn-active-color: #335c67;
+    --bs-btn-active-color: #0B4753;
     --bs-btn-active-bg: #d1c48a;
     --bs-btn-active-border-color: #d1c48a;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #335c67;
+    --bs-btn-disabled-color: #0B4753;
     --bs-btn-disabled-bg: #fff3b0;
     --bs-btn-disabled-border-color: #fff3b0;
 }
@@ -123,10 +131,20 @@ nav {
 }
 
 .logo {
-    height: 10vh;
+    height: 12vh;
 }
 
 nav {
-    height: 10vh;
+    height: 12.8vh;
     background-color: var(--bs-primary);
+    padding: 0;
+}
+
+nav .container {
+    max-height: 100%;
+}
+
+nav.navbar {
+    --bs-navbar-brand-padding-y: 0.2vh;
+    --bs-navbar-padding-y: 0.2vh;
 }

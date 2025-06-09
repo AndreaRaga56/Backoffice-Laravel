@@ -1,9 +1,12 @@
 @extends('layouts.app')
+
+@section('title', 'Modifica Profilo')
+
 @section('content')
 
 <div class="container">
-    <h2 class="fs-4 text-secondary my-4">
-        {{ __('Profile') }}
+    <h2 class="fs-4 py-4">
+       <strong>Profilo</strong>
     </h2>
     <div class="card p-4 mb-4 bg-white shadow rounded-lg">
 
