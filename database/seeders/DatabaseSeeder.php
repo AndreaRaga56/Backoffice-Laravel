@@ -13,7 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $this->call([
+            GenresTableSeeder::class,
+            MoviesTableSeeder::class,
+            StreamingPlatformsTableSeeder::class,
+            MovieStreamingPlatformTableSeeder::class,
+        ]);
 
         User::factory()->create([
             'name' => 'Test User',
