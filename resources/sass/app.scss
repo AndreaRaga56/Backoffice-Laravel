@@ -142,9 +142,32 @@ nav {
 
 nav .container {
     max-height: 100%;
+
 }
 
 nav.navbar {
     --bs-navbar-brand-padding-y: 0.2vh;
     --bs-navbar-padding-y: 0.2vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+th,
+td{
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.8rem;
+}
+
+.action{
+        border: none;
+}
+
+table{
+    border-radius: 1rem;
+    background-color: var(--bs-danger);
+    padding: 2rem;
+    color: var(--bs-secondary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
