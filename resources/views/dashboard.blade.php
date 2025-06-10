@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<main>
     <div class="container ">
         <h2 class="fs-4 my-4">
             <strong>
@@ -31,5 +32,5 @@
                 Vai alla lista dei film
             </a>
         </div>
-    </div>
+    </div></main>
 @endsection
