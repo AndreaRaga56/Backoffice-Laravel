@@ -3,9 +3,18 @@
 @section('title', 'Tutti i Film')
 
 @section('content')
-    {{-- @dd($movies[0]->title) --}}
     <div class="container d-flex justify-content-center flex-column align-items-center">
-        <h1 class="my-3">Tutti i Film</h1>
+        <h1 class="my-3 titolo">Tutti i Film</h1>
+
+        <div class="mb-3">
+            <a href="{{ route('movies.create') }}" class="btn btn-secondary m-1">Aggiungi un nuovo Film</a>
+            <a href="
+            {{-- {{ route('genres.index') }} --}}
+            " class="btn btn-secondary m-1">Gestisci Generi</a>
+            <a href="
+            {{-- {{ route('streaming-platforms.index') }} --}}
+            " class="btn btn-secondary m-1">Gestisci Piattaforme</a>
+        </div>
 
         <table>
             <thead>
@@ -13,7 +22,6 @@
                     <th>Titolo</th>
                     <th>Anno</th>
                     <th>Regista</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -36,5 +44,4 @@
 
 
 
-    @endsection
-
+@endsection

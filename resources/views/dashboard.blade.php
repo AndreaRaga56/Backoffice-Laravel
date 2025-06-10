@@ -26,5 +26,10 @@
                 </div>
             </div>
         </div>
+        <div class="my-4 text-center">
+            <a href="{{ route('movies.index') }}" class="btn btn-danger btn-lg">
+                Vai alla lista dei film
+            </a>
+        </div>
     </div>
 @endsection

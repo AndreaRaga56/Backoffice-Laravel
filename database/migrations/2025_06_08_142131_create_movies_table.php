@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('director');
+            $table->string('title', 255);
+            $table->string('director', 255);
             $table->year('release_year');
-            $table->float('rating')->nullable();
+            $table->decimal('rating', 4, 2)->nullable();
             $table->text('description')->nullable();
             $table->foreignId('genre_id')->nullable()->constrained('genres');
-            $table->string('poster_url')->default('https://placehold.co/270x400/0B4753/e09f3e?text=POSTER\nNON+DISPONIBILE');
+            $table->string('poster_url')->default('https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE');
             $table->timestamps();
         });
     }
