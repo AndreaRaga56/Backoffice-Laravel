@@ -27,7 +27,7 @@
                                     {{ $movie->genre->name }}
                             </p>
                         @else
-                            Non disponibile</p>
+                            Genere non disponibile</p>
                             @endif
 
 
@@ -65,28 +65,45 @@
                     </div>
                 </div>
             </div>
+
             <div class="bottoni">
                 <div>
                     <a href="{{ route('movies.index') }}" class="btn btn-secondary me-2">Torna alla lista</a>
                 </div>
-
-
                 <div>
-                    <a href="
-                        {{-- {{ route('admin.movies.edit', $movie->id) }} --}}
-                         "
-                        class="btn btn-primary me-2">Modifica</a>
-
-                    <form action="
-                        {{-- {{ route('admin.movies.destroy', $movie->id) }} --}}
-                         " method="POST"
-                        class="d-inline" onsubmit="return confirm('Sei sicuro di voler eliminare questo film?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Elimina</button>
-                    </form>
+                    <a href="{{ route('movies.edit', $movie) }}" class="btn btn-primary me-2">Modifica</a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">Elimina</button>
                 </div>
             </div>
         </div>
     </main>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Elimina Film</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Sei sicuro di voler eliminare il film definitivamente?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <form action="{{ route('movies.destroy', $movie) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

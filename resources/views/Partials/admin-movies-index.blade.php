@@ -5,7 +5,7 @@
 @section('content')
     <main>
         <div class="container d-flex justify-content-center flex-column align-items-center">
-            <h1 class="my-3 titolo">Tutti i Film</h1>
+            <h1 class="my-4 titolo">Tutti i Film</h1>
 
             <div class="mb-3">
                 <a href="{{ route('movies.create') }}" class="btn btn-secondary m-1">Aggiungi un nuovo Film</a>

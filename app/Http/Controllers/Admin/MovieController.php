@@ -77,23 +77,89 @@ class MovieController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Movie $movie)
     {
-        return view('Partials.admin-movies-edit');
+        $genres = Genre::all();
+        $streamingPlatforms = StreamingPlatform::all();
+        return view('Partials.admin-movies-edit', compact('movie', 'genres', 'streamingPlatforms'));
     }
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Movie $movie)
     {
-        //
+        $data = $request->all();
+
+
+        if ($request->isMethod("PUT")) {
+            $validated = $request->validate([
+                'title' => 'required|string|max:255',
+                'director' => 'required|string|max:255',
+                'release_year' => 'required|integer|min:1900|',
+                'description' => 'nullable|string',
+                'genre_id' => 'nullable|integer',
+                'rating' => 'nullable|decimal:0,2|min:0|max:10',
+            ]);
+        } elseif ($request->isMethod("PATCH")) {
+            $validated = $request->validate([
+                'title' => 'sometimes|string|max:255',
+                'director' => 'sometimes|string|max:255',
+                'release_year' => 'sometimes|integer|min:1900|',
+                'description' => 'nullable|string',
+                'genre_id' => 'nullable|integer',
+                'rating' => 'nullable|decimal:0,2|min:0|max:10',
+            ]);
+        } else {
+            return redirect()->route('movies.index');
+        }
+
+
+        if (array_key_exists("image_action", $data)) {
+            if ($data['image_action'] != 'Mantieni') {
+                if ($data['image_action'] == 'Elimina') {
+                    Storage::delete($movie->poster_url);
+                    $validated['poster_url'] = 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE';
+                } elseif ($data['image_action'] == 'Modifica') {
+                    if ($request->image) {
+                        Storage::delete($movie->poster_url);
+                        $path = Storage::putFile('movies', $data['image']);
+                        $validated['poster_url'] = $path;
+                    } else {
+                        return redirect()->route('movies.edit', $movie);
+                    }
+                }
+            }
+        } else {
+            $validated['poster_url'] = 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE';
+            if (array_key_exists("poster_url", $data)) {
+                $path = Storage::putFile('movies', $data['poster_url']);
+                $validated['poster_url'] = $path;
+            }
+        }
+
+
+        $movie->update($validated);
+
+        if ($request->has('streamingPlatforms')) {
+            $movie->streamingPlatforms()->sync($data['streamingPlatforms']);
+        } else {
+            $movie->streamingPlatforms()->detach();
+        }
+
+        return redirect()->route('movies.show', $movie);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Movie $movie)
     {
-        //
+        if ($movie->image) {
+            Storage::delete($movie->image);
+        }
+        $movie->streamingPlatforms()->detach();
+        $movie->delete();
+
+        return redirect()->route('movies.index');
     }
 }
