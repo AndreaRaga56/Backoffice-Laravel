@@ -35,6 +35,7 @@ h1 {
     --bs-body-font-family: var(--bs-font-sans-serif);
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 400;
+    --bs-border-width: 1px;
 }
 
 .btn-primary {
@@ -139,6 +140,14 @@ h1 {
     --bs-btn-disabled-border-color: #B23F25;
 }
 
+.btn-group-lg>.btn,
+.btn-lg {
+    --bs-btn-padding-y: 0.5rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-font-size: 1.25rem;
+    --bs-btn-border-radius: var(--bs-border-radius-lg);
+}
+
 .logo {
     height: 10vh;
 }
@@ -176,6 +185,7 @@ main {
     top: 0;
 }
 
+///
 th,
 td {
     text-align: center;
@@ -183,16 +193,21 @@ td {
     padding: 0.6rem 0.8rem;
 }
 
-.action {
-    border: none;
+.my-table .th {
+    font-weight: 700;
 }
 
-table {
+.my-table {
     border-radius: 0.7rem;
     background-color: var(--bs-secondary);
     padding: 2rem;
     color: var(--bs-danger);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    vertical-align: middle;
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto;
 }
 
 .titolo {
@@ -284,6 +299,18 @@ ul {
 
 @media (max-width: 576px) {
 
+    .my-table {
+    font-size: 0.75rem;
+    }
+
+    .my-table .btn{
+        font-size: 0.6rem;
+    }
+
+    .my-table .th{
+        font-weight: 800;
+    }
+
     .regista {
         display: none;
     }
@@ -316,17 +343,23 @@ ul {
         margin: 0 auto;
     }
 
-    ///?????
     .btn-index {
         align-items: center;
-
-        width: 100%;
+        width: 90%;
+        max-width: 50rem;
     }
 
-    .btn-index .btn {
-        width: 100%;
+    .btn-index .btn.my-1 {
         display: block;
-        margin: 0.35rem 0rem;
+        margin: 0.5rem 0rem !important;
     }
 
+}
+
+@media (max-width: 768px) {
+
+    ///
+    .regista {
+        display: none;
+    }
 }
