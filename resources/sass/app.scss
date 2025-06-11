@@ -250,7 +250,6 @@ ul {
     padding: 0rem 0.5rem;
 }
 
-
 .bottoni {
     width: 90%;
     margin-top: 1.2rem;
@@ -285,15 +284,15 @@ ul {
 
 @media (max-width: 576px) {
 
-    .regista{
+    .regista {
         display: none;
     }
 
-    .bottoni{
+    .bottoni {
         display: block;
     }
 
-    .bottoni .btn{
+    .bottoni .btn {
         width: 100%;
         margin: 0.35rem 0rem;
     }
@@ -315,6 +314,19 @@ ul {
         margin-top: 1rem;
         margin-bottom: 1rem;
         margin: 0 auto;
+    }
+
+    ///?????
+    .btn-index {
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .btn-index .btn {
+        width: 100%;
+        display: block;
+        margin: 0.35rem 0rem;
     }
 
 }

@@ -7,7 +7,7 @@
         <div class="container d-flex justify-content-center flex-column align-items-center">
             <h1 class="my-4 titolo">Tutti i Film</h1>
 
-            <div class="bottoni mb-3">
+            <div class=" btn-index mb-3">
                 <a href="{{ route('movies.create') }}" class="btn btn-secondary m-1">Aggiungi un nuovo Film</a>
                 <a href="
             {{-- {{ route('genres.index') }} --}}
