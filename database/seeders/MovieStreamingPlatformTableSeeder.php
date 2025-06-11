@@ -13,7 +13,7 @@ class MovieStreamingPlatformTableSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 1; $i < 9; $i++) {
+        for ($i = 1; $i < 19; $i++) {
             $numberOfPlatforms4ThisMovie = rand(1, 3);
             $alreadyUsedPlatforms = [];
             for ($j = 0; $j < $numberOfPlatforms4ThisMovie; $j++) {

@@ -69,7 +69,7 @@
             </form>
             <div class="bottoni">
                 <div>
-                    <a href="{{ route('movies.index') }}" class="btn btn-secondary me-2">Torna alla lista</a>
+                    <a href="{{ route('movies.index') }}" class="btn btn-secondary">Torna alla lista</a>
                 </div>
             </div>
         </div>

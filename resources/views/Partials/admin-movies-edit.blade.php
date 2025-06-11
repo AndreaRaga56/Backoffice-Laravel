@@ -101,7 +101,7 @@
             </form>
             <div class="bottoni">
                 <div>
-                    <a href="{{ route('movies.show', $movie) }}" class="btn btn-secondary me-2">Torna alla scheda del
+                    <a href="{{ route('movies.show', $movie) }}" class="btn btn-secondary">Torna alla scheda del
                         film</a>
                 </div>
             </div>

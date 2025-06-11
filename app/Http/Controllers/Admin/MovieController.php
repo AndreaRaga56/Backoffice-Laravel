@@ -35,8 +35,6 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-
-        // dd($request);
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'director' => 'required|string|max:255',
@@ -65,14 +63,15 @@ class MovieController extends Controller
         return redirect()->route('movies.show', $newMovie);
     }
 
+
     /**
      * Display the specified resource.
      */
     public function show(Movie $movie)
     {
-
         return view('Partials.admin-movies-show', compact('movie'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -83,13 +82,14 @@ class MovieController extends Controller
         $streamingPlatforms = StreamingPlatform::all();
         return view('Partials.admin-movies-edit', compact('movie', 'genres', 'streamingPlatforms'));
     }
+
+
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Movie $movie)
     {
         $data = $request->all();
-
 
         if ($request->isMethod("PUT")) {
             $validated = $request->validate([
@@ -112,7 +112,6 @@ class MovieController extends Controller
         } else {
             return redirect()->route('movies.index');
         }
-
 
         if (array_key_exists("image_action", $data)) {
             if ($data['image_action'] != 'Mantieni') {
@@ -137,7 +136,6 @@ class MovieController extends Controller
             }
         }
 
-
         $movie->update($validated);
 
         if ($request->has('streamingPlatforms')) {
@@ -148,6 +146,7 @@ class MovieController extends Controller
 
         return redirect()->route('movies.show', $movie);
     }
+
 
     /**
      * Remove the specified resource from storage.

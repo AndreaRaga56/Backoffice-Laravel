@@ -25,29 +25,26 @@
                             <p><strong>Genere: </strong>
                                 @if ($movie->genre)
                                     {{ $movie->genre->name }}
+                                @else
+                                    Genere non disponibile
+                                @endif
                             </p>
-                        @else
-                            Genere non disponibile</p>
-                            @endif
-
-
-                            <p><strong>Descrizione: </strong>
-                                @if ($movie->description)
-                                    {{ $movie->description }}
-                            </p>
-                        @else
-                            Descrizione non disponibile</p>
-                            @endif
-
 
                             <p><strong>Voto:</strong>
                                 @if ($movie->rating)
                                     {{ $movie->rating }}
+                                @else
+                                    Voto non disponibile
+                                @endif
                             </p>
-                        @else
-                            Voto non disponibile</p>
-                            @endif
 
+                            <p class="my-2"><strong>Descrizione: </strong>
+                                @if ($movie->description)
+                                    {{ $movie->description }}
+                                @else
+                                    Descrizione non disponibile
+                                @endif
+                            </p>
 
                             <p><strong>Piattaforme di streaming: </strong>
                                 @if ($movie->streamingPlatforms->isNotEmpty())
@@ -66,14 +63,14 @@
                 </div>
             </div>
 
-            <div class="bottoni">
+            <div class="bottoni mt-3 mb-1">
                 <div>
-                    <a href="{{ route('movies.index') }}" class="btn btn-secondary me-2">Torna alla lista</a>
-                </div>
-                <div>
-                    <a href="{{ route('movies.edit', $movie) }}" class="btn btn-primary me-2">Modifica</a>
+                    <a href="{{ route('movies.edit', $movie) }}" class="btn btn-primary">Modifica</a>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">Elimina</button>
+                </div>
+                <div>
+                    <a href="{{ route('movies.index') }}" class="btn btn-secondary ">Torna ai Film</a>
                 </div>
             </div>
         </div>

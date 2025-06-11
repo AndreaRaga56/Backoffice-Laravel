@@ -18,6 +18,10 @@ p {
     margin: 0;
 }
 
+h1 {
+    font-size: calc(1.35rem + 1.2vw);
+}
+
 :root {
     --bs-primary: #0B4753;
     --bs-secondary: #fff3b0;
@@ -25,6 +29,12 @@ p {
     --bs-danger: #B23F25;
     --bs-dark: #5A171D;
     --bs-emphasis-color-rgb: 255, 243, 176;
+    --bs-font-sans-serif: "Nunito", sans-serif;
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
 }
 
 .btn-primary {
@@ -173,7 +183,6 @@ td {
     padding: 0.6rem 0.8rem;
 }
 
-
 .action {
     border: none;
 }
@@ -262,7 +271,7 @@ ul {
     color: var(--bs-secondary);
 }
 
-.edit{
+.edit {
     background-color: #ff5a5f;
 }
 
@@ -275,6 +284,19 @@ ul {
 }
 
 @media (max-width: 576px) {
+
+    .regista{
+        display: none;
+    }
+
+    .bottoni{
+        display: block;
+    }
+
+    .bottoni .btn{
+        width: 100%;
+        margin: 0.35rem 0rem;
+    }
 
     .my-card-body {
         display: block;
