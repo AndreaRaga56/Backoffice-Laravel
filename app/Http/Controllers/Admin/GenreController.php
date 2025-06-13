@@ -47,7 +47,7 @@ class GenreController extends Controller
             return redirect()->route('genres.index');
         }
 
-        if ($validated['name'] != null) {
+        if ($validated['name'] == null) {
             return redirect()->route('genres.index');
         }
 
