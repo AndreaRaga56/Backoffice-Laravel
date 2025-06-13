@@ -10,4 +10,8 @@ class StreamingPlatform extends Model
     {
         return $this->belongsToMany(Movie::class);
     }
+
+    protected $fillable = [
+        'name',
+    ];
 }

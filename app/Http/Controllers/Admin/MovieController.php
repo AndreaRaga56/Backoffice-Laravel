@@ -25,7 +25,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        $genres = Genre::all();
+        $genres = Genre::all()->sortBy('name');
         $streamingPlatforms = StreamingPlatform::all();
         return view('Partials.admin-movies-create', compact('genres', 'streamingPlatforms'));
     }
@@ -78,7 +78,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        $genres = Genre::all();
+        $genres = Genre::all()->sortBy('name');
         $streamingPlatforms = StreamingPlatform::all();
         return view('Partials.admin-movies-edit', compact('movie', 'genres', 'streamingPlatforms'));
     }
