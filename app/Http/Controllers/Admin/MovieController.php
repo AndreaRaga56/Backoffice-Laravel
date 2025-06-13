@@ -119,9 +119,9 @@ class MovieController extends Controller
                     Storage::delete($movie->poster_url);
                     $validated['poster_url'] = 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE';
                 } elseif ($data['image_action'] == 'Modifica') {
-                    if ($request->image) {
+                    if ($request->poster_url) {
                         Storage::delete($movie->poster_url);
-                        $path = Storage::putFile('movies', $data['image']);
+                        $path = Storage::putFile('movies', $data['poster_url']);
                         $validated['poster_url'] = $path;
                     } else {
                         return redirect()->route('movies.edit', $movie);
