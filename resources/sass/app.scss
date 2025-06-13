@@ -297,18 +297,35 @@ ul {
     color: var(--bs-secondary);
 }
 
+.genres{
+    background-color: var(--bs-danger);
+}
+
+.genres .my-table {
+    background-color: var(--bs-secondary);
+    color: var(--bs-primary);
+}
+
+.genres .my-table .btn {
+    margin: 0.15rem;
+}
+
 @media (max-width: 576px) {
 
-    .my-table {
-    font-size: 0.75rem;
+    .my-table.movie {
+        font-size: 0.75rem;
     }
 
-    .my-table .btn{
+    .my-table.movie .btn {
         font-size: 0.6rem;
     }
 
-    .my-table .th{
+    .my-table.movie .th {
         font-weight: 800;
+    }
+
+    .genres .my-table .btn {
+        width: 100%;
     }
 
     .regista {

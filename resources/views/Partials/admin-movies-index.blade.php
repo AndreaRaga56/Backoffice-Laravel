@@ -9,16 +9,15 @@
 
             <div class=" btn-index mb-2">
                 <a href="{{ route('movies.create') }}" class="btn btn-secondary my-1">Aggiungi un nuovo Film</a>
+                <a href="{{ route('genres.index') }}" class="btn btn-secondary my-1">Gestisci
+                    Generi</a>
                 <a href="
-            {{-- {{ route('genres.index') }} --}}
-            " class="btn btn-secondary my-1">Gestisci Generi</a>
-                <a href="
-            {{-- {{ route('streaming-platforms.index') }} --}}
+           {{ route('streaming-platforms.index') }}
             " class="btn btn-secondary my-1">Gestisci
                     Piattaforme</a>
             </div>
 
-            <div class="my-table">
+            <div class="my-table movie">
                 <div class="row justify-content-center align-items-center">
                     <div class="th col-6 col-md-4 py-2">Titolo</div>
                     <div class="th col-2 col-md-1 py-2">Anno</div>
@@ -46,6 +45,6 @@
                     @endif
                 @endforeach
             </div>
-            </div>
-            </main>
-        @endsection
+        </div>
+    </main>
+@endsection
