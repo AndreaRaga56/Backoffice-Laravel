@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Tutti i Generi')
+@section('title', 'Gestisci i Generi')
 
 @section('content')
     <main class="genres">
         <div class="container d-flex justify-content-center flex-column align-items-center">
-            <h1 class="my-4 titolo">Tutti i Generi</h1>
+            <h1 class="my-4 titolo">Gestisci i Generi</h1>
 
             <div class=" btn-index mb-2">
-                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna ai Film</a>
+                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna alla lista dei film</a>
                 <a type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#addGenreModal">Aggiungi
                     nuovo</a>
             </div>

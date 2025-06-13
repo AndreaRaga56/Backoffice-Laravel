@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Tutte le Piattaforme di Streaming')
+@section('title', 'Gestisci le piattaforme di streaming')
 
 @section('content')
 <main class="genres">
         <div class="container d-flex justify-content-center flex-column align-items-center">
-            <h1 class="my-4 titolo">Tutte le Piattaforme di Streaming</h1>
+            <h1 class="my-4 titolo">Gestisci le piattaforme di streaming</h1>
 
             <div class=" btn-index mb-2">
-                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna ai Film</a>
+                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna alla lista dei film</a>
                 <a type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#addStreamingPlatformModal">Aggiungi
                     nuova</a>
             </div>
@@ -48,7 +48,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="editPlatformModal{{ $platform->id }}Label">Modifica il
-                            nome della Piattaforma</h1>
+                            nome della piattaforma</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="{{ route('streaming-platforms.update', $platform) }}" id="editPlatformForm{{ $platform->id }}" method="POST"
@@ -57,7 +57,7 @@
                         @method('PUT')
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="platformName" class="form-label">Nome Piattaforma</label>
+                                <label for="platformName" class="form-label">Nome piattaforma</label>
                                 <input type="text" class="form-control" id="platformName" name="name"
                                     value="{{ $platform->name }}" required>
                             </div>
@@ -78,7 +78,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="deletePlatformModal{{ $platform->id }}Label">Elimina
-                            Piattaforma</h1>
+                            piattaforma</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -103,20 +103,20 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addStreamingPlatformModalLabel">Aggiungi una Nuova Piattaforma</h1>
+                    <h1 class="modal-title fs-5" id="addStreamingPlatformModalLabel">Aggiungi una nuova piattaforma</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('streaming-platforms.store') }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="platformName" class="form-label">Nome Piattaforma</label>
+                            <label for="platformName" class="form-label">Nome piattaforma</label>
                             <input type="text" class="form-control" id="platformName" name="name" required>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                        <button type="submit" class="btn btn-primary">Aggiungi Piattaforma</button>
+                        <button type="submit" class="btn btn-primary">Aggiungi piattaforma</button>
                     </div>
                 </form>
             </div>

@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', 'Tutti i Film')
+@section('title', 'Tutti i film')
 
 @section('content')
     <main>
         <div class="container d-flex justify-content-center flex-column align-items-center">
-            <h1 class="my-4 titolo">Tutti i Film</h1>
+            <h1 class="my-4 titolo">Tutti i film</h1>
 
             <div class=" btn-index mb-2">
-                <a href="{{ route('movies.create') }}" class="btn btn-secondary my-1">Aggiungi un nuovo Film</a>
+                <a href="{{ route('movies.create') }}" class="btn btn-secondary my-1">Aggiungi un nuovo film</a>
                 <a href="{{ route('genres.index') }}" class="btn btn-secondary my-1">Gestisci
                     Generi</a>
                 <a href="
            {{ route('streaming-platforms.index') }}
             " class="btn btn-secondary my-1">Gestisci
-                    Piattaforme</a>
+                    piattaforme</a>
             </div>
 
             <div class="my-table movie">

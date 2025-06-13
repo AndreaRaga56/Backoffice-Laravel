@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Modifica Film')
+@section('title', 'Modifica il film '. $movie->title)
 
 @section('content')
     {{-- @dd($movie->description); --}}
     <main class="edit">
         <div class="container">
-            <h1 class="my-4 titolo">Modifica Film</h1>
+            <h1 class="my-4 titolo">Modifica il film {{$movie->title}}</h1>
 
             <form action="{{ route('movies.update', $movie) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Piattaforme di Streaming</label>
+                    <label class="form-label">Piattaforme di streaming</label>
                     <div>
                         @foreach ($streamingPlatforms as $platform)
                             <div class="form-check form-check-inline">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-secondary">Modifica Film</button>
+                <button type="submit" class="btn btn-secondary">Modifica il film</button>
             </form>
             <div class="bottoni">
                 <div>

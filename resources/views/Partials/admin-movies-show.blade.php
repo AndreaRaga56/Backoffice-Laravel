@@ -70,7 +70,7 @@
                         data-bs-target="#staticBackdrop">Elimina</button>
                 </div>
                 <div>
-                    <a href="{{ route('movies.index') }}" class="btn btn-secondary ">Torna ai Film</a>
+                    <a href="{{ route('movies.index') }}" class="btn btn-secondary ">Torna alla lista dei film</a>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Elimina Film</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Elimina il film</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
