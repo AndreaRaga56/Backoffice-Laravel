@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Genre;
-use Exception;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller

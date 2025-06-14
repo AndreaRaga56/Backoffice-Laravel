@@ -11,16 +11,18 @@
                     <div class="col-12 col-sm-3">
                         <div class="poster">
                             @if (str_starts_with($movie->poster_url, 'http'))
-                            <img src="{{ $movie->poster_url }}" @else <img
-                                    src="{{ asset('storage/' . $movie->poster_url) }}" @endif
-                                alt="Poster di {{ $movie->title }}" class="img-fluid">
+                                <img src="{{ $movie->poster_url }}" alt="Poster di {{ $movie->title }}">
+                            @else
+                                <img class="img-fluid" src="{{ asset('storage/' . $movie->poster_url) }}"
+                                    alt="Poster di {{ $movie->title }}">
+                            @endif
+
                         </div>
                     </div>
                     <div class=" col-12 col-sm-9">
                         <div class="movie-details">
                             <p><strong>Anno: </strong>{{ $movie->release_year }}</p>
                             <p><strong>Regista: </strong>{{ $movie->director }}</p>
-
 
                             <p><strong>Genere: </strong>
                                 @if ($movie->genre)

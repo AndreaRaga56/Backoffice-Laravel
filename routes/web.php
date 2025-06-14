@@ -27,9 +27,6 @@ Route::resource('movies', MovieController::class)
 Route::resource('genres', GenreController::class)
 ->middleware(['auth']);
 
-Route::resource('genres', GenreController::class)
-->middleware(['auth']);
-
 Route::resource('streaming-platforms', StreamingPlatformController::class)
 ->middleware(['auth']);
 
