@@ -7,7 +7,7 @@
         <div class="container">
             <h1 class="my-4 titolo">Aggiungi un nuovo film</h1>
 
-            <form action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                 @csrf
 
                 <div class="mb-3">

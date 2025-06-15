@@ -96,7 +96,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                    <form action="{{ route('movies.destroy', $movie) }}" method="POST" class="d-inline">
+                    <form action="{{ route('movies.destroy', $movie) }}" method="POST" class="d-inline" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
