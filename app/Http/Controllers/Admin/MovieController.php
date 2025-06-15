@@ -20,6 +20,7 @@ class MovieController extends Controller
         return view('Partials.admin-movies-index', compact('movies'));
     }
 
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -30,6 +31,7 @@ class MovieController extends Controller
         return view('Partials.admin-movies-create', compact('genres', 'streamingPlatforms'));
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -38,7 +40,7 @@ class MovieController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'director' => 'required|string|max:255',
-            'release_year' => 'required|integer|min:1900|',
+            'release_year' => 'required|integer|min:1895|max:2115',
             'description' => 'nullable|string',
             'genre_id' => 'nullable|integer',
             'rating' => 'nullable|decimal:0,2|min:0|max:10',
@@ -46,10 +48,11 @@ class MovieController extends Controller
 
         $data = $request->all();
 
-        $validated['poster_url'] = 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE';
         if ($request->poster_url) {
             $path = Storage::putFile('movies', $data['poster_url']);
             $validated['poster_url'] = $path;
+        } else {
+            $validated['poster_url'] = 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE';
         }
 
         $newMovie = new Movie;
@@ -95,7 +98,7 @@ class MovieController extends Controller
             $validated = $request->validate([
                 'title' => 'required|string|max:255',
                 'director' => 'required|string|max:255',
-                'release_year' => 'required|integer|min:1900|',
+                'release_year' => 'required|integer|min:1895|max:2115',
                 'description' => 'nullable|string',
                 'genre_id' => 'nullable|integer',
                 'rating' => 'nullable|decimal:0,2|min:0|max:10',
@@ -129,10 +132,11 @@ class MovieController extends Controller
                 }
             }
         } else {
-            $validated['poster_url'] = 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE';
             if (array_key_exists("poster_url", $data)) {
                 $path = Storage::putFile('movies', $data['poster_url']);
                 $validated['poster_url'] = $path;
+            } else {
+                $validated['poster_url'] = 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE';
             }
         }
 
@@ -153,8 +157,8 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        if ($movie->image) {
-            Storage::delete($movie->image);
+        if ($movie->poster_url && $movie->poster_url != 'https://placehold.co/270x400/0B4753/e09f3e?text=POSTER+NON+DISPONIBILE') {
+            Storage::delete($movie->poster_url);
         }
         $movie->streamingPlatforms()->detach();
         $movie->delete();

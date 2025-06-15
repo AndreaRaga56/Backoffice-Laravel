@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             $table->string('director', 255);
-            $table->year('release_year');
+            $table->smallInteger('release_year');
             $table->decimal('rating', 4, 2)->nullable();
             $table->text('description')->nullable();
             $table->foreignId('genre_id')->nullable()->constrained('genres');
