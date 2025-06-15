@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Modifica il film '. $movie->title)
+@section('title', 'Modifica il film ' . $movie->title)
 
 @section('content')
     {{-- @dd($movie->description); --}}
     <main class="edit">
         <div class="container">
-            <h1 class="my-4 titolo">Modifica il film {{$movie->title}}</h1>
+            <h1 class="my-4 titolo">Modifica il film {{ $movie->title }}</h1>
 
             <form action="{{ route('movies.update', $movie) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -106,6 +106,5 @@
                 </div>
             </div>
         </div>
-
     </main>
 @endsection

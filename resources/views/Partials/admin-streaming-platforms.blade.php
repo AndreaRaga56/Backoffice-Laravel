@@ -3,13 +3,15 @@
 @section('title', 'Gestisci le piattaforme di streaming')
 
 @section('content')
-<main class="genres">
+    <main class="genres">
         <div class="container d-flex justify-content-center flex-column align-items-center">
             <h1 class="my-4 titolo">Gestisci le piattaforme di streaming</h1>
 
             <div class=" btn-index mb-2">
-                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna alla lista dei film</a>
-                <a type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#addStreamingPlatformModal">Aggiungi
+                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna alla lista dei
+                    film</a>
+                <a type="button" class="btn btn-primary my-1" data-bs-toggle="modal"
+                    data-bs-target="#addStreamingPlatformModal">Aggiungi
                     nuova</a>
             </div>
 
@@ -40,7 +42,6 @@
     </main>
 
     @foreach ($streamingPlatforms as $platform)
-
         <!-- Edit Modal -->
         <div class="modal fade" id="editPlatformModal{{ $platform->id }}" data-bs-backdrop="static" data-bs-keyboard="false"
             tabindex="-1" aria-labelledby="editPlatformModal{{ $platform->id }}Label" aria-hidden="true">
@@ -51,8 +52,8 @@
                             nome della piattaforma</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('streaming-platforms.update', $platform) }}" id="editPlatformForm{{ $platform->id }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ route('streaming-platforms.update', $platform) }}"
+                        id="editPlatformForm{{ $platform->id }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="modal-body">
@@ -72,8 +73,9 @@
         </div>
 
         <!-- Delete Modal -->
-        <div class="modal fade" id="deletePlatformModal{{ $platform->id }}" data-bs-backdrop="static" data-bs-keyboard="false"
-            tabindex="-1" aria-labelledby="deletePlatformModal{{ $platform->id }}Label" aria-hidden="true">
+        <div class="modal fade" id="deletePlatformModal{{ $platform->id }}" data-bs-backdrop="static"
+            data-bs-keyboard="false" tabindex="-1" aria-labelledby="deletePlatformModal{{ $platform->id }}Label"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -82,11 +84,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Sei sicuro di voler eliminare <strong class="text-danger">{{ $platform->name }}</strong> definitivamente?
+                        Sei sicuro di voler eliminare <strong class="text-danger">{{ $platform->name }}</strong>
+                        definitivamente?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                        <form action="{{ route('streaming-platforms.destroy', $platform) }}" method="POST" class="d-inline" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
+                        <form action="{{ route('streaming-platforms.destroy', $platform) }}" method="POST"
+                            class="d-inline" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
@@ -106,7 +110,8 @@
                     <h1 class="modal-title fs-5" id="addStreamingPlatformModalLabel">Aggiungi una nuova piattaforma</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('streaming-platforms.store') }}" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
+                <form action="{{ route('streaming-platforms.store') }}" method="POST"
+                    onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
@@ -122,6 +127,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection

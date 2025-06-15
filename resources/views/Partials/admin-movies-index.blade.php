@@ -9,12 +9,8 @@
 
             <div class=" btn-index mb-2">
                 <a href="{{ route('movies.create') }}" class="btn btn-secondary my-1">Aggiungi un nuovo film</a>
-                <a href="{{ route('genres.index') }}" class="btn btn-secondary my-1">Gestisci
-                    Generi</a>
-                <a href="
-           {{ route('streaming-platforms.index') }}
-            " class="btn btn-secondary my-1">Gestisci
-                    piattaforme</a>
+                <a href="{{ route('genres.index') }}" class="btn btn-secondary my-1">Gestisci Generi</a>
+                <a href="{{ route('streaming-platforms.index') }}" class="btn btn-secondary my-1">Gestisci piattaforme</a>
             </div>
 
             <div class="my-table movie">

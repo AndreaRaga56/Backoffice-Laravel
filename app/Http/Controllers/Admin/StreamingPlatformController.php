@@ -54,7 +54,7 @@ class StreamingPlatformController extends Controller
         return redirect()->route('streaming-platforms.index');
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      */

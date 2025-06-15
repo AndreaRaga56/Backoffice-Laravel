@@ -53,7 +53,7 @@ class GenreController extends Controller
         return redirect()->route('genres.index');
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      */

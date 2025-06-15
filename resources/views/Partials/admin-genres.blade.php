@@ -8,7 +8,8 @@
             <h1 class="my-4 titolo">Gestisci i Generi</h1>
 
             <div class=" btn-index mb-2">
-                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna alla lista dei film</a>
+                <a type="button" href="{{ route('movies.index') }}" class="btn btn-secondary my-1">Torna alla lista dei
+                    film</a>
                 <a type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#addGenreModal">Aggiungi
                     nuovo</a>
             </div>
@@ -81,11 +82,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Sei sicuro di voler eliminare <strong class="text-danger">{{ $genre->name }}</strong> definitivamente?
+                        Sei sicuro di voler eliminare <strong class="text-danger">{{ $genre->name }}</strong>
+                        definitivamente?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                        <form action="{{ route('genres.destroy', $genre) }}" method="POST" class="d-inline" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
+                        <form action="{{ route('genres.destroy', $genre) }}" method="POST" class="d-inline"
+                            onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
@@ -105,7 +108,8 @@
                     <h1 class="modal-title fs-5" id="addGenreModalLabel">Aggiungi un Nuovo Genere</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('genres.store') }}" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
+                <form action="{{ route('genres.store') }}" method="POST"
+                    onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
@@ -121,5 +125,4 @@
             </div>
         </div>
     </div>
-
 @endsection
