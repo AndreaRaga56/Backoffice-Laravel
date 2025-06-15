@@ -58,7 +58,7 @@
                             <div class="mb-3">
                                 <label for="genreName" class="form-label">Nome Genere</label>
                                 <input type="text" class="form-control" id="genreName" name="name"
-                                    value="{{ $genre->name }}" required>
+                                    placeholder="{{ $genre->name }}" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                        <form action="{{ route('genres.destroy', $genre) }}" method="POST" class="d-inline">
+                        <form action="{{ route('genres.destroy', $genre) }}" method="POST" class="d-inline" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
@@ -105,7 +105,7 @@
                     <h1 class="modal-title fs-5" id="addGenreModalLabel">Aggiungi un Nuovo Genere</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('genres.store') }}" method="POST">
+                <form action="{{ route('genres.store') }}" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">

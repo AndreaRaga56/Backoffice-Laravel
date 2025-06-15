@@ -17,6 +17,7 @@ class GenreController extends Controller
         return view('Partials.admin-genres', compact('genres'));
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -33,6 +34,7 @@ class GenreController extends Controller
         return redirect()->route('genres.index');
     }
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -40,13 +42,9 @@ class GenreController extends Controller
     {
         if ($request->isMethod("PUT")) {
             $validated = $request->validate([
-                'name' => 'required|string|max:255|unique:genres,name,' . $genre->id,
+                'name' => 'required|string|max:255|unique:genres,name,',
             ]);
         } else {
-            return redirect()->route('genres.index');
-        }
-
-        if ($validated['name'] == null) {
             return redirect()->route('genres.index');
         }
 
@@ -55,6 +53,7 @@ class GenreController extends Controller
         return redirect()->route('genres.index');
     }
 
+    
     /**
      * Remove the specified resource from storage.
      */

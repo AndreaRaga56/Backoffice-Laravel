@@ -59,7 +59,7 @@
                             <div class="mb-3">
                                 <label for="platformName" class="form-label">Nome piattaforma</label>
                                 <input type="text" class="form-control" id="platformName" name="name"
-                                    value="{{ $platform->name }}" required>
+                                    placeholder="{{ $platform->name }}" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -86,7 +86,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                        <form action="{{ route('streaming-platforms.destroy', $platform) }}" method="POST" class="d-inline">
+                        <form action="{{ route('streaming-platforms.destroy', $platform) }}" method="POST" class="d-inline" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
@@ -106,7 +106,7 @@
                     <h1 class="modal-title fs-5" id="addStreamingPlatformModalLabel">Aggiungi una nuova piattaforma</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('streaming-platforms.store') }}" method="POST">
+                <form action="{{ route('streaming-platforms.store') }}" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">

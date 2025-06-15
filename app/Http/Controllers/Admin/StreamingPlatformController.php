@@ -18,6 +18,7 @@ class StreamingPlatformController extends Controller
         return view('Partials.admin-streaming-platforms', compact('streamingPlatforms'));
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -34,6 +35,7 @@ class StreamingPlatformController extends Controller
         return redirect()->route('streaming-platforms.index');
     }
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -41,22 +43,18 @@ class StreamingPlatformController extends Controller
     {
         if ($request->isMethod("PUT")) {
             $validated = $request->validate([
-                'name' => 'required|string|max:255|unique:streaming_platforms,name,' . $streamingPlatform->id,
+                'name' => 'required|string|max:255|unique:streaming_platforms,name,',
             ]);
         } else {
             return redirect()->route('streaming-platforms.index');
         }
-
-        if ($validated['name'] == null) {
-            return redirect()->route('streaming-platforms.index');
-        }
-
 
         $streamingPlatform->update($validated);
 
         return redirect()->route('streaming-platforms.index');
     }
 
+    
     /**
      * Remove the specified resource from storage.
      */
