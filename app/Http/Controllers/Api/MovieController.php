@@ -22,6 +22,7 @@ class MovieController extends Controller
         ]);
     }
 
+
     /**
      * Display the specified resource.
      */

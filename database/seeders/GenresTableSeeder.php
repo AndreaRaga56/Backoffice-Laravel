@@ -13,7 +13,7 @@ class GenresTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $words = ['Azione', 'Commedia', 'Drammatico', 'Fantascienza', 'Horror', 'Grottesco', 'Romantico', 'Thriller', 'Animazione', 'Avventura', 'Documentario', 'Storico', 'Fantasy', 'Western', ];
+        $words = ['Azione', 'Commedia', 'Drammatico', 'Fantascienza', 'Horror', 'Grottesco', 'Romantico', 'Thriller', 'Animazione', 'Avventura', 'Documentario', 'Storico', 'Fantasy', 'Western',];
 
         foreach ($words as $word) {
             $newGenre = new Genre();
